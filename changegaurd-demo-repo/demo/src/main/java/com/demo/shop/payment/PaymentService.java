@@ -11,7 +11,7 @@ public class PaymentService {
     }
 
     public boolean processPayment(String orderId) {
-        System.out.println("Processing payment for: " + orderId);
+        System.out.println("Starting payment processing for: " + orderId);
 
         boolean stockReserved = inventoryService.reserveStock(orderId);
 
