@@ -10,9 +10,17 @@ public class InventoryService {
         this.notificationService = new NotificationService();
     }
     public boolean reserveStock(String orderId) {
-        System.out.println("Reserving stock for: " + orderId);
-        notificationService.sendNotification(orderId);
+    System.out.println("Checking stock for: " + orderId);
 
-        return true;
+    boolean stockAvailable = true;
+
+    if (!stockAvailable) {
+        System.out.println("Stock unavailable");
+        return false;
     }
+
+    notificationService.sendNotification(orderId);
+
+    return true;
+}
 }
